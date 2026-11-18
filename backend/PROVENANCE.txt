@@ -1,0 +1,38 @@
+MemoryShield+ backend source for memoryshield-agent v1.0.0
+
+Upstream project
+https://github.com/GFDDFDGHJ/memoryshield-plus-aml
+Upstream release commit
+2d5561a42233d34ba4d535ec24936489bd2e12cc
+Backend method version
+v3.17.1
+
+This directory contains a source allowlist copied from the local v3.17.1
+backend deployment. The Python files below are byte-for-byte copies. The
+MCP adapter is maintained separately in the parent package. No operational
+database, request log, credentials or evaluation payload is included.
+The original MIT license and attribution remain in LICENSE and NOTICE.txt.
+
+Docker deployment uses a separate named volume and an explicit AML_DB_PATH.
+Compose requires API credentials supplied by the operator, enables API
+authentication and leaves reranking disabled unless the operator enables it.
+The original NOTICE.txt describes the upstream competition history. Its old
+version-specific statements are historical provenance.
+
+SHA256 of copied files
+ecf9680e2b4eada9513bceb7d30a75ac97b39a6bee2b69145b5506bf5f2852a1  app.py
+4536d276f8e1090ff633c2d7411cb256e9bd6d5dc309f300d58dc31bc13a6b87  config.py
+82f45a235f1c395392c4ce7e1a96b57508e9ba36884710ad79ee6d36d2fa36e2  store.py
+6f662c4193df07e3ef7fe41a42d72d66b6d66f8f7c2cbc75235a56be1f2e91cc  add_memory.py
+20dac3d3970fb197f55bf64481c3eb72eacc08ab4739b204c902537c6946aa6b  add_index.py
+cffd3a1eba6bb9272089473525e4ccfa2b3b094d358bc27e29eaa14ff9fd81f6  facts.py
+1176d62a60ced84f124129fa05736d7df25c8207cb607b8af0592c017b3d11b9  governance.py
+9c37cab1a4e64376a5ffc2b4940704b8f57c6d49e05a512c6d37a5e0c19fa701  evidence_links.py
+675b5a600b4d742d97098638965b1f52c002062b49b267e69ab2852aeba514c9  query_plan.py
+b48a9e3acc9439559a5e5adb148bfb11adddb1d9b17d0736c7520d8a0eaf8fa6  source_dependencies.py
+6da19995b3a7cc461bcb7930106367144900512cfcca462a71be5ed82a29741a  reranker.py
+ace4ca88db3d85a983abd08e82d82637f9774639685006f565b184b77d64c234  state_evidence.py
+ee48b68c4cdac65af5fe173b4e8dd0d9eb7b512920adcb3c81e7c2ebcf46b495  context_data.py
+5978e22231ed712444aa74bf9c8a505683813c3a9556896e46608f151d3dc81d  LICENSE
+4edb9fd3532ecc3cdb2cf2674884e56cc9c728e1dcd961ab64fc106b955387fb  NOTICE.txt
+2a4f6b3916178d9223d2268046697764c2bf01ebc4594fbb2660693628b30ebd  requirements.txt

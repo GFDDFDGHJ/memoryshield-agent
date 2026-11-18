@@ -1,0 +1,28 @@
+name: memoryshield-agent
+services:
+  backend:
+    build:
+      context: ./backend
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${MEMORYSHIELD_PORT:-18080}:8080"
+    environment:
+      AML_DB_PATH: /data/memoryshield-agent.db
+      AML_VERSION: v3.17.1
+      AML_AUTH_TOKEN: ${AML_AUTH_TOKEN:?Set AML_AUTH_TOKEN in .env}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Set OPENAI_API_KEY in .env}
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:?Set DASHSCOPE_API_KEY in .env}
+      EMBEDDING_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+      EMBEDDING_MODEL: text-embedding-v4
+      EMBEDDING_MODE: standard
+      EMBEDDING_DIM: "1024"
+      EMBEDDING_CONCURRENCY: "2"
+      AML_ADD_SELECTION_FAILURE_POLICY: raw_on_unmatched
+      AML_ADD_LLM_CONCURRENCY: "2"
+      AML_GOVERNANCE: "false"
+      AML_RERANK: ${AML_RERANK:-false}
+    volumes:
+      - agent-memory:/data
+volumes:
+  agent-memory:

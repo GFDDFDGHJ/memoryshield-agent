@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+build-env-*/
+build-requirements-*.txt
+.env
+.secrets/
+data/
+*.db*
+*.log
+*.jsonl
+*.zip

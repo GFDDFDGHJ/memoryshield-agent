@@ -1,0 +1,7 @@
+*
+!Dockerfile
+!requirements.txt
+!*.py
+!LICENSE
+!NOTICE.txt
+!PROVENANCE.txt

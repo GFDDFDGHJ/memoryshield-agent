@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "memoryshield-agent"
+version = "1.0.0"
+description = "Persistent, source-aware memory tools for MCP agents"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "GFDDFDGHJ"}]
+dependencies = ["mcp==2.3.0", "httpx>=0.28.1,<0.29", "pydantic>=2.12,<3"]
+
+[project.scripts]
+memoryshield-agent = "memoryshield_agent.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/memoryshield_agent"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "backend", "scripts", "README.md", "LICENSE", "NOTICE.txt", "pyproject.toml", "compose.yaml", ".env.example"]

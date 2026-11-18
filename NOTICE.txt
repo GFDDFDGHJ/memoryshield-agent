@@ -1,0 +1,46 @@
+MemoryShield+ Agent Plugin v1.0.0
+Copyright (c) 2026 GFDDFDGHJ
+
+The author has authorized this project's MIT license. See LICENSE.
+Third-party dependencies, provider services and model licenses retain
+their respective terms.
+
+Project origin
+
+The MCP adapter is based on the MemoryShield+ AML memory service by
+GFDDFDGHJ. The bundled backend is method version v3.17.1 from
+https://github.com/GFDDFDGHJ/memoryshield-plus-aml
+Commit 2d5561a42233d34ba4d535ec24936489bd2e12cc.
+
+This release adds MCP stdio tools, an operator-configured namespace,
+sanitized HTTP errors, Add receipt validation, installation examples,
+a separate self-hosted database configuration and synthetic integration
+tests. Backend retrieval algorithms remain those of the cited source.
+backend/PROVENANCE.txt provides file hashes. backend/NOTICE.txt preserves
+the upstream historical attribution document, including its earlier
+v3.14.0 configuration statements.
+
+Actual model use in this release
+
+Add uses official OpenAI gpt-4o-mini and DashScope text-embedding-v4.
+Search uses text-embedding-v4 and optionally qwen3-rerank.
+The default Compose deployment disables reranking. The backend returns
+stored evidence for the host agent to evaluate. Provider access and usage
+charges are the operator's responsibility.
+
+Dependencies, distributed separately by their maintainers
+
+- MCP Python SDK https://github.com/modelcontextprotocol/python-sdk
+- HTTPX https://github.com/encode/httpx
+- Pydantic https://github.com/pydantic/pydantic
+- FastAPI https://github.com/fastapi/fastapi
+- Uvicorn https://github.com/encode/uvicorn
+- sqlite-vec https://github.com/asg017/sqlite-vec
+- OpenAI Python SDK https://github.com/openai/openai-python
+- NumPy, optional upstream acceleration https://github.com/numpy/numpy
+- Python and SQLite have their own platform licenses.
+
+This repository includes project source. Operational data, credentials and
+official evaluation payloads are excluded. The MCP plugin has not undergone
+a separate leaderboard evaluation. MemoryShield+ is this project's name
+and does not imply affiliation with other similarly named papers.
